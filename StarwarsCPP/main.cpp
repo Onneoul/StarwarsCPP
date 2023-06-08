@@ -46,10 +46,10 @@ void drawDeathStar(GLUquadric* quadric, GLfloat x, GLfloat y, GLfloat z, GLfloat
 int Width = 800, Height = 800;
 
 void init() {
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);  // Å¬¸®¾î »ö»ó ¼³Á¤ (°ËÀº»ö)
-    glEnable(GL_DEPTH_TEST);  // ±íÀÌ Å×½ºÆ® È°¼ºÈ­
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);  // í´ë¦¬ì–´ ìƒ‰ìƒ ì„¤ì • (ê²€ì€ìƒ‰)
+    glEnable(GL_DEPTH_TEST);  // ê¹Šì´ í…ŒìŠ¤íŠ¸ í™œì„±í™”
 
-    // ÅØ½ºÃ³ ÃÊ±âÈ­
+    // í…ìŠ¤ì²˜ ì´ˆê¸°í™”
     glGenTextures(1, &textureID);
     glGenTextures(1, &bottomTextureID);
     glGenTextures(1, &topTextureID1);
@@ -68,17 +68,17 @@ void Init() {
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_SMOOTH);
 }
-// ÅØ½ºÃÄ ±¸°£
+// í…ìŠ¤ì³ êµ¬ê°„
 //void Init() {
 //    glClearColor(0.0, 0.0, 0.0, 0.0);
 //    glShadeModel(GL_SMOOTH);
 //
 //    MyStripeImage();
 //
-//    glGenTextures(1, &MyTextureObject); // glGenTextures(2, MyTextureObject); <= À§¿¡¼­, MyTextureObject [2]ÀÏ °æ¿ì
+//    glGenTextures(1, &MyTextureObject); // glGenTextures(2, MyTextureObject); <= ìœ„ì—ì„œ, MyTextureObject [2]ì¼ ê²½ìš°
 //    glBindTexture(GL_TEXTURE_1D, MyTextureObject);
-//    // ¿¹¸¦ µé¾î, glBindTexture(GL_TEXTURE_1D, MyTextureObject [0] );
-//    // ¶Ç´Â glBindTexture(GL_TEXTURE_1D, MyTextureObject [1] );
+//    // ì˜ˆë¥¼ ë“¤ì–´, glBindTexture(GL_TEXTURE_1D, MyTextureObject [0] );
+//    // ë˜ëŠ” glBindTexture(GL_TEXTURE_1D, MyTextureObject [1] );
 //
 //    glTexImage1D(GL_TEXTURE_1D, 0, 4, stripeImageWidth, 0, GL_RGBA, GL_UNSIGNED_BYTE, stripeImage);
 //
@@ -94,7 +94,7 @@ void Init() {
 //    glEnable(GL_TEXTURE_GEN_S);
 //    glEnable(GL_TEXTURE_1D);
 //
-//    // (ÀÖ´Ù¸é) µÎ ¹øÂ° ÅØ½ºÃÄ ¼³Á¤¡¦
+//    // (ìˆë‹¤ë©´) ë‘ ë²ˆì§¸ í…ìŠ¤ì³ ì„¤ì •â€¦
 //}
 
 //void bindTexture(const char* textureFilePath, int width, int height) {
@@ -128,7 +128,7 @@ void bindTexture(const char* textureFilePath, int width, int height, GLuint* tex
         return;
     }
 
-    // ÅØ½ºÃ³ ID »ı¼º
+    // í…ìŠ¤ì²˜ ID ìƒì„±
     glGenTextures(1, textureID);
     glBindTexture(GL_TEXTURE_2D, *textureID);
 
@@ -158,7 +158,7 @@ void laserTexture() {
 
 }
 
-// °´Ã¼ ±¸Çö ÇÔ¼ö
+// ê°ì²´ êµ¬í˜„ í•¨ìˆ˜
 void drawDeathStar(GLUquadric* quadric, GLfloat x, GLfloat y, GLfloat z, GLfloat size) {
     //Death star
     glPushMatrix();
@@ -595,7 +595,7 @@ void TieChasingXWing(GLfloat TieX, GLfloat TieY, GLfloat TieZ, GLfloat XwingX, G
 }
 
 void drawCockpit() {
-    glColor3f(0.35, 0.35, 0.35); // ¿À¸¥ÂÊ
+    glColor3f(0.35, 0.35, 0.35); // ì˜¤ë¥¸ìª½
     glBegin(GL_POLYGON);
     glVertex3f(1.3, 0.6, 0);
     glVertex3f(1.8, -1, 0);
@@ -603,7 +603,7 @@ void drawCockpit() {
     glVertex3f(2, 0.6, 0);
     glEnd();
 
-    glColor3f(0.35, 0.35, 0.35); //¿ŞÂÊ 
+    glColor3f(0.35, 0.35, 0.35); //ì™¼ìª½ 
     glBegin(GL_POLYGON);
     glVertex3f(-1.3, 0.6, 0);
     glVertex3f(-1.8, -1, 0);
@@ -612,7 +612,7 @@ void drawCockpit() {
     glEnd();
 
 
-    //»óºÎ
+    //ìƒë¶€
     glColor3f(0.25, 0.25, 0.25);
     glBegin(GL_POLYGON);
     glVertex3f(-1.8, 2.5, 0);
@@ -637,7 +637,7 @@ void drawCockpit() {
     glVertex3f(5, 2.5, 0);
     glEnd();
 
-    glColor3f(1, 0, 0); // °è±âÆÇ
+    glColor3f(1, 0, 0); // ê³„ê¸°íŒ
     glBegin(GL_POLYGON);
     glVertex3f(-2, -0.2, 0);
     glVertex3f(-1.3, 0.7, 0);
@@ -651,7 +651,7 @@ void drawCockpit() {
 void laser(int color) {
     int colour = color;
 
-    if (colour == 1) { // ÃÊ·Ï»ö
+    if (colour == 1) { // ì´ˆë¡ìƒ‰
         glPushMatrix();
         glEnable(GL_LIGHTING);
         glColor3f(0.8, 1., .8);
@@ -659,7 +659,7 @@ void laser(int color) {
         glPopMatrix();
     }
     else {
-        glPushMatrix(); // »¡°£»ö
+        glPushMatrix(); // ë¹¨ê°„ìƒ‰
         glEnable(GL_LIGHTING);
         glColor3f(1, .8, .8);
         gluCylinder(gluNewQuadric(), 1, 1, 3, 30, 30);
@@ -689,9 +689,9 @@ void drawTurret(double angle) {
 }
 
 
-// È­¸é ±¸¼º °ü·Ã ÇÔ¼ö
+// í™”ë©´ êµ¬ì„± ê´€ë ¨ í•¨ìˆ˜
 
-void crashCheck() { // Ãæµ¹ ¿µ¿ª È®ÀÎ
+void crashCheck() { // ì¶©ëŒ ì˜ì—­ í™•ì¸
     if (((cameraTestx >= -1.4) && (cameraTestx <= 1.4)) && ((cameraTesty <= 1.4) && (cameraTesty >= -1.9))) {
         crash = 0;
     }
@@ -702,43 +702,48 @@ void crashCheck() { // Ãæµ¹ ¿µ¿ª È®ÀÎ
 }
 
 void gameOver(int crash) {
-    // °ÔÀÓ ¿À¹ö È­¸é ±¸Çö
+    // ê²Œì„ ì˜¤ë²„ í™”ë©´ êµ¬í˜„
     if (crash == 1) {
         printf("Game Over\n");
         //Sleep(10000);
     }
 }
 
-void open(int status) { // ¿ÀÇÁ´× ¾À ±¸Çö ÇÔ¼ö
+void open(int status) { // ì˜¤í”„ë‹ ì”¬ êµ¬í˜„ í•¨ìˆ˜
     if (opening == 0) {
         if (DeathstarX >= 0) { DeathstarX -= 0.2; }
         if (DeathstarY >= 0) { DeathstarY -= 0.1; }
         if (DeathstarZ <= 20) { DeathstarZ += 0.5; }
 
         if (DeathstarX <= 0 && DeathstarY <= 0 && DeathstarZ >= - 20) {
-            // OpeningÀ» 0À¸·Î
+            // Openingì„ 0ìœ¼ë¡œ
             opening = 1;
             //printf("Opening is End. Opening is %d\n", opening);
             airCraftX = 0, airCraftY = 0, airCraftZ = 0;
+            // 
         }
         else {
             opening = 0;
             printf("DeathStarX = %f, Y = %f, Z = %f\n", DeathstarX, DeathstarY, DeathstarZ);
+            // ë°ìŠ¤ìŠ¤íƒ€ëŠ” ê³ ì •, chasing í•¨ìˆ˜ë¡œ êµ¬í˜„ëœ ì „íˆ¬ê¸°ë“¤ì´ ì›€ì§ì´ëŠ” ê±¸ ë©”ì¸í™”ë©´ìœ¼ë¡œ
         }
     }
 }
 
-void end(int status) { // ¿£µù ¾À ±¸Çö ÇÔ¼ö
+void end(int status) { // ì—”ë”© ì”¬ êµ¬í˜„ í•¨ìˆ˜
     if (endingSequence == 0 && opening == 1) {
-        // ¹Ì»çÀÏ ¹ß»ç Àå¸é
+        // ë¯¸ì‚¬ì¼ ë°œì‚¬ ì¥ë©´
+        // ë¯¸ì‚¬ì¼ì´ ì¼ì • ìœ„ì¹˜ê¹Œì§€ ê°€ë©´. ì¦‰, ë¯¸ì‚¬ì¼ ì¢Œí‘œê°€ ì¼ì • ê°’ì´ ë˜ë©´
+        // endingSequence = 1;
     }
     else if (endingSequence == 1) {
-        // µ¥½º½ºÅ¸ Æø¹ß Àå¸é
+        // ë°ìŠ¤ìŠ¤íƒ€ í­ë°œ ì¥ë©´
+        // endingSequenceë¥¼ 3ìœ¼ë¡œ ë°”ê¾¸ê³  ì¢…ë£Œ
     }
 }
 
 
-void road() { // º» È­¸é ±¸¼º ÇÔ¼ö
+void road() { // ë³¸ í™”ë©´ êµ¬ì„± í•¨ìˆ˜
     crashCheck();
     open(opening);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -750,7 +755,7 @@ void road() { // º» È­¸é ±¸¼º ÇÔ¼ö
 
     glEnable(GL_TEXTURE_2D);
 
-    // µ¥½º½ºÅ¸ ±æ
+    // ë°ìŠ¤ìŠ¤íƒ€ ê¸¸ - ë³„ë„ì˜ í•¨ìˆ˜ë¡œ 
 
     if (opening == 1) {
         glPushMatrix();
@@ -850,7 +855,7 @@ void road() { // º» È­¸é ±¸¼º ÇÔ¼ö
         glEnd();
         glPopMatrix();
 
-        // ÄÛÇÍ Ãâ·Â
+        // ì½•í• ì¶œë ¥
         glPushMatrix();
         glRotatef(0.4, 0, 0, 1);
         glTranslatef(0, -11, 0);
@@ -865,7 +870,7 @@ void road() { // º» È­¸é ±¸¼º ÇÔ¼ö
             GLUquadric* deathStarQuadric = gluNewQuadric();
             gluQuadricTexture(deathStarQuadric, GL_TRUE);
             drawDeathStar(deathStarQuadric, DeathstarX, DeathstarY, DeathstarZ, 5);
-            glBindTexture(GL_TEXTURE_2D, 0);
+            glBindTexture(GL_TEXTURE_2D, 0); // ì™œ ì´ê±´ ë˜ëŠ”ë°??
         glPopMatrix();
     }
 
@@ -873,13 +878,13 @@ void road() { // º» È­¸é ±¸¼º ÇÔ¼ö
     glutSwapBuffers();
 }
 
-void drawGameOver() {
+void drawGameOver() { // road í•¨ìˆ˜ ìœ„ìª½ìœ¼ë¡œ
     crashCheck();
     glClear(GL_COLOR_BUFFER_BIT);
 
     glColor3f(0.7, 0.3, 0.4);
 
-    // µ¥½º½ºÅ¸ ±æ ÀÌµ¿ Å×½ºÆ®
+    // ë°ìŠ¤ìŠ¤íƒ€ ê¸¸ ì´ë™ í…ŒìŠ¤íŠ¸
     //// Endpoint
     glPushMatrix();
     glTranslatef(cameraTestx, -1 + cameraTesty, cameraTestz);
@@ -909,7 +914,7 @@ void drawGameOver() {
 
 
 
-    // ÄÛÇÍ Ãâ·Â
+    // ì½•í• ì¶œë ¥
     glPushMatrix();
     glTranslatef(0, -12, 0);
     glScalef(6, 6, 6);
@@ -982,45 +987,54 @@ void gamePlay() {
 }
 
 void cameraTest(unsigned char key, int x, int y) {
-    switch (key)
-    {
-    case 'w':
-        cameraTesty -= 0.1;
-        printf("Current Location X = %.1f, Y = %.1f. Speed is %.1f\n", cameraTestx, cameraTesty, cameraTestz);
-        glutPostRedisplay();
-        break;
-    case 'a':
-        cameraTestx += 0.1;
-        printf("Current Location X = %.1f, Y = %.1f. Speed is %.1f\n", cameraTestx, cameraTesty, cameraTestz);
-        glutPostRedisplay();
-        break;
-    case 's':
-        cameraTesty += 0.1;
-        printf("Current Location X = %.1f, Y = %.1f. Speed is %.1f\n", cameraTestx, cameraTesty, cameraTestz);
-        glutPostRedisplay();
-        break;
-    case 'd':
-        cameraTestx -= 0.1;
-        printf("Current Location X = %.1f, Y = %.1f. Speed is %.1f\n", cameraTestx, cameraTesty, cameraTestz);
-        glutPostRedisplay();
-        break;
+    if (opening == 0) {
+        switch (key)
+        {
+        case 'w':
+            cameraTesty -= 0.1;
+            printf("Current Location X = %.1f, Y = %.1f. Speed is %.1f\n", cameraTestx, cameraTesty, cameraTestz);
+            glutPostRedisplay();
+            break;
+        case 'a':
+            cameraTestx += 0.1;
+            printf("Current Location X = %.1f, Y = %.1f. Speed is %.1f\n", cameraTestx, cameraTesty, cameraTestz);
+            glutPostRedisplay();
+            break;
+        case 's':
+            cameraTesty += 0.1;
+            printf("Current Location X = %.1f, Y = %.1f. Speed is %.1f\n", cameraTestx, cameraTesty, cameraTestz);
+            glutPostRedisplay();
+            break;
+        case 'd':
+            cameraTestx -= 0.1;
+            printf("Current Location X = %.1f, Y = %.1f. Speed is %.1f\n", cameraTestx, cameraTesty, cameraTestz);
+            glutPostRedisplay();
+            break;
 
-    case 'r':
-        //acceleration(speed);
-        speed += speed / 42.1;
-        cameraTestz = speed;
-        printf("Current Location X = %.1f, Y = %.1f. Speed is %f\n", cameraTestx, cameraTesty, cameraTestz);
-        break;
-    case 'f':
-        //deAcceleration(speed);
-        speed -= speed / 31.5;
-        cameraTestz = speed;
-        printf("Current Location X = %.1f, Y = %.1f. Speed is %f\n", cameraTestx, cameraTesty, cameraTestz);
-        break;
+        case 'r':
+            //acceleration(speed);
+            speed += speed / 42.1;
+            cameraTestz = speed;
+            printf("Current Location X = %.1f, Y = %.1f. Speed is %f\n", cameraTestx, cameraTesty, cameraTestz);
+            break;
+        case 'f':
+            //deAcceleration(speed);
+            speed -= speed / 31.5;
+            cameraTestz = speed;
+            printf("Current Location X = %.1f, Y = %.1f. Speed is %f\n", cameraTestx, cameraTesty, cameraTestz);
+            break;
 
-    default:
-        printf("Current Key = %c\n", key);
-        break;
+        default:
+            printf("Current Key = %c\n", key);
+            break;
+        }
+    } else {
+        printf("press anykey to start"\n);
+        switch(key) {
+            default:
+                opening = 0;
+                break;
+        }
     }
 }
 
@@ -1033,7 +1047,7 @@ void cameraTestReshape2(int w, int h) {
     gluPerspective(60, (GLfloat)w / (GLfloat)h, 1.0, 220.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    gluLookAt(0, 0, 20, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+    gluLookAt(0, 0, 20, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0); // lookat í•¨ìˆ˜ë¥¼ ì¡°ì ˆí•˜ë©´ 3d ëª¨ë¸ì„ ë‹¤ì‹œ ê·¸ë¦´ í•„ìš”ê°€ ì—†ë‚˜?
 }
 
 void myTimer(int value) {
@@ -1043,8 +1057,8 @@ void myTimer(int value) {
 
 int main() {
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    // glEnable(GL_Depth_BUFFER); //?
 
-    //glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);
     glutInitWindowSize(800, 800);
     //glutInitWindowSize(Width, Height);
     glutInitWindowPosition(0, 0);
@@ -1053,7 +1067,7 @@ int main() {
 
     glutDisplayFunc(road);
     glutReshapeFunc(cameraTestReshape2);
-    //LoadGLTextures();
+    //LoadGLTextures(); //-- for what? ì£¼ì„ í’€ê³  ì‹¤í–‰
     glutKeyboardFunc(cameraTest);
     glutTimerFunc(16.6, myTimer, 0);
 
